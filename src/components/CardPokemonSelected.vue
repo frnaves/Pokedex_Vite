@@ -25,6 +25,11 @@ const pokemon = defineProps(["name", "base_experience", "height", "imagem", "loa
                 <hr>
                 <div class="row">
                     <section class="col">
+                        <strong>Nº: </strong>
+                        <span>{{pokemon.number}}</span>
+                    </section>
+
+                    <section class="col">
                         <strong>XP: </strong>
                         <span>{{pokemon.base_experience}}</span>
                     </section>
@@ -34,10 +39,7 @@ const pokemon = defineProps(["name", "base_experience", "height", "imagem", "loa
                         <span>{{pokemon.height}}</span>
                     </section>
 
-                    <section class="col">
-                        <strong>Número: </strong>
-                        <span>{{pokemon.number}}</span>
-                    </section>
+
                 </div>
 
             </div>            
@@ -55,21 +57,22 @@ background: linear-gradient(335deg, rgba(166,166,167,1) 0%, rgba(238,238,240,1) 
 }
 
 .cardPokemonSelected img {
+    margin-top: 50px;
     height: 250px;
     width: auto; 
     object-fit: contain;
-
 }
 
 @media (max-width: 1000px) {
 
     .cardPokemonSelected{
-    height: 30vh;
+    height: 35vh;
     margin: 0 0 10px 0;
     }
 
     .cardPokemonSelected img {
-    height: 150px;
+    margin-top: 27px;
+    height: 100px;
     width: auto; 
     object-fit: contain;
     }

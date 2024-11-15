@@ -49,7 +49,7 @@ const selectPokemon = async (pokemon)=>{
           :name = "pokemonSelected?.name" 
           :base_experience = "pokemonSelected?.base_experience"
           :height = "pokemonSelected?.height"
-          :imagem = "pokemonSelected?.sprites.front_default" 
+          :imagem = "pokemonSelected?.sprites.other.showdown.front_default" 
           :loading="loading"
           :number ="pokemonSelected?.id"
 
@@ -105,7 +105,7 @@ const selectPokemon = async (pokemon)=>{
 
 @media (max-width: 1000px) {
   .cardList{
-  max-height: 55vh;
+  max-height: 45vh;
 }
   
 }

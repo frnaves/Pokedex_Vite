@@ -9,13 +9,24 @@ const pokemon = defineProps(["name", "urlBaseSvg"])
     <div class="col-4">    
         <div class="card p-1 mb-3  cardListPokemon">
             <p class="text-center">{{ pokemon.name }}</p>
-            <img :src="urlBaseSvg" class="card-img-top" alt="..." height="90">
+            <img :src="urlBaseSvg" class="card-img-top" alt="..." height=90>
         </div>
     </div>
 </template>
 
 
 <style scoped>
+
+@media (max-width: 1000px) {
+    p{
+    font-size: small;
+    }
+
+    img {
+        height: 50px;
+    }
+}
+
 
 .cardListPokemon{
     background: white;
