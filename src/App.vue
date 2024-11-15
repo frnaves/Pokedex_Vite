@@ -7,8 +7,8 @@ let num = ref(0)
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid bg-secondary-subtle">
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid bg-secondary-subtle p-1">
       
       <router-link class="navbar-brand" to="/">      
         <img src="/src/assets/pokevite.png" alt="Logo" width="30" height="30"><strong>PokeVite</strong>
@@ -44,9 +44,8 @@ let num = ref(0)
 
   <footer class="bg-body-tertiary text-center text-lg-start">
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05)">
-    © {{ new Date().getFullYear() }} - Desenvolvido por Felipe Naves através do curso de Vue - <a href="">Projeto PokeVite</a> do Yuri Marcon    
-  </div>
+  <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.05)">
+    © {{ new Date().getFullYear() }} - Desenvolvido por Felipe Naves </div>
   <!-- Copyright -->
   </footer>
 
