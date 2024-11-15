@@ -1,6 +1,6 @@
 <script setup>
 
-const pokemon = defineProps(["name", "base_experience", "height", "imagem", "loading"])
+const pokemon = defineProps(["name", "base_experience", "height", "imagem", "loading", "number"])
 
 </script>
 
@@ -33,6 +33,11 @@ const pokemon = defineProps(["name", "base_experience", "height", "imagem", "loa
                         <strong>Altura: </strong>
                         <span>{{pokemon.height}}</span>
                     </section>
+
+                    <section class="col">
+                        <strong>Número: </strong>
+                        <span>{{pokemon.number}}</span>
+                    </section>
                 </div>
 
             </div>            
@@ -47,7 +52,27 @@ const pokemon = defineProps(["name", "base_experience", "height", "imagem", "loa
 height: 75vh;
 background: rgb(166,166,167);
 background: linear-gradient(335deg, rgba(166,166,167,1) 0%, rgba(238,238,240,1) 60%, rgba(213,214,214,1) 100%);
+}
 
+.cardPokemonSelected img {
+    height: 250px;
+    width: auto; 
+    object-fit: contain;
+
+}
+
+@media (max-width: 1000px) {
+
+    .cardPokemonSelected{
+    height: 30vh;
+    margin: 0 0 10px 0;
+    }
+
+    .cardPokemonSelected img {
+    height: 150px;
+    width: auto; 
+    object-fit: contain;
+    }
 
 }
 

@@ -35,7 +35,6 @@ const selectPokemon = async (pokemon)=>{
   .finally(()=>{ loading.value = false; })
 
   console.log(pokemonSelected.value)
-
 }
 
 </script>
@@ -52,6 +51,7 @@ const selectPokemon = async (pokemon)=>{
           :height = "pokemonSelected?.height"
           :imagem = "pokemonSelected?.sprites.front_default" 
           :loading="loading"
+          :number ="pokemonSelected?.id"
 
           />
         </div>
@@ -102,6 +102,14 @@ const selectPokemon = async (pokemon)=>{
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
+@media (max-width: 1000px) {
+  .cardList{
+  max-height: 55vh;
+}
+  
+}
+
 
 .pesquisa{
   height: 50px;
