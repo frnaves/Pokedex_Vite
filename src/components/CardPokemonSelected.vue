@@ -1,11 +1,12 @@
 <script setup>
 
-const pokemon = defineProps(["name", "base_experience", "height", "imagem", "loading", "number"])
+const pokemon = defineProps(["name", "base_experience", "height", "imagem", "loading", "number", "cry"])
+
 
 </script>
 
 
-<template>
+<template>   
 
         <div class="card cardPokemonSelected">
 
@@ -20,17 +21,17 @@ const pokemon = defineProps(["name", "base_experience", "height", "imagem", "loa
 
 
 
-            <div class="card-body">
+            <div class="card-body" style="text-align: center;">
                 <h5 class="card-title text-center">{{pokemon.name || '???'}}</h5>
                 <hr>
-                <div class="row">
+                <div class="row" style="font-size: small; align-items: center;">
                     <section class="col">
                         <strong>Nº: </strong>
                         <span>{{pokemon.number}}</span>
                     </section>
 
                     <section class="col">
-                        <strong>XP: </strong>
+                        <strong >XP: </strong>
                         <span>{{pokemon.base_experience}}</span>
                     </section>
 
@@ -39,6 +40,16 @@ const pokemon = defineProps(["name", "base_experience", "height", "imagem", "loa
                         <span>{{pokemon.height}}</span>
                     </section>
 
+
+                    <section class="col">
+                        <audio id="player" :src="cry"></audio>
+
+                        <button class="btn btn-light" onclick="document.getElementById('player').play()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-soundwave" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8.5 2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-1 0v-11a.5.5 0 0 1 .5-.5m-2 2a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5m4 0a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5m-6 1.5A.5.5 0 0 1 5 6v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m8 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m-10 1A.5.5 0 0 1 3 7v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5m12 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5"/>
+</svg></button>
+
+
+                    </section>
 
                 </div>
 

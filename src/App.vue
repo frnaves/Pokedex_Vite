@@ -55,15 +55,21 @@ let num = ref(0)
 <style>
 
 .navbar{
+  
+  display: block;
+  font-size: small;
   margin-top: 0px;
   padding-top: 0px;
 }
 
 footer{
+  padding-top: 10px;
   position: fixed;
   bottom: 0;
   width: 100%;
   align-items: center;
   justify-content: center;
 }
+
+
 </style>

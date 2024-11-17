@@ -9,7 +9,7 @@ const pokemon = defineProps(["name", "urlBaseSvg"])
     <div class="col-4">    
         <div class="card p-1 mb-3  cardListPokemon">
             <p class="text-center">{{ pokemon.name }}</p>
-            <img :src="urlBaseSvg" class="card-img-top" alt="..." height=90>
+            <img :src="urlBaseSvg" class="card-img-top" alt="..."   >
         </div>
     </div>
 </template>
@@ -23,7 +23,7 @@ const pokemon = defineProps(["name", "urlBaseSvg"])
     }
 
     img {
-        height: 50px;
+        height: 70px;
     }
 }
 
@@ -36,6 +36,7 @@ const pokemon = defineProps(["name", "urlBaseSvg"])
 
 .cardListPokemon img{
     transition: padding 0.3s ease;
+    object-fit: contain
 }
 
 .cardListPokemon:hover{

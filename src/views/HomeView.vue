@@ -4,14 +4,14 @@ import { onMounted, reactive, ref, computed } from 'vue';
 import ListPokemons from '@/components/ListPokemons.vue';
 import CardPokemonSelected from '@/components/CardPokemonSelected.vue';
 
-let urlBaseSvg = ref("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/")
+let urlBaseSvg = ref("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/")
 let pokemons = reactive(ref())
 let searchPokemonField = ref("")
 let pokemonSelected = reactive(ref())
 let loading = ref(false)
 
 onMounted(()=>{
-  fetch("https://pokeapi.co/api/v2/pokemon?limit=151&offset=0")
+  fetch("https://pokeapi.co/api/v2/pokemon?limit=1025&offset=0")
   .then(res => res.json())
   .then(res => pokemons.value = res.results);  
 })
@@ -52,15 +52,15 @@ const selectPokemon = async (pokemon)=>{
           :imagem = "pokemonSelected?.sprites.other.showdown.front_default" 
           :loading="loading"
           :number ="pokemonSelected?.id"
+          :cry = "pokemonSelected?.cries.latest"
 
           />
         </div>
 
 
-        <div class="col-sm-12 col-md-12 col-lg-6">          
-          <div class="card cardList">             
-            <div class="card-body row ">
-              <div class="input-group mb-3 pesquisa">
+        <div class="col-sm-12 col-md-12 col-lg-6">         
+          <div>
+            <div class="input-group mb-2 pesquisa">
                 <span class="input-group-text" id="inputGroup-sizing-default"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg></span>
                 
                 <label 
@@ -76,12 +76,19 @@ const selectPokemon = async (pokemon)=>{
                 placeholder="Pesquisar">
 
               </div>
+
+          </div>           
+ 
+          <div class="card cardList">  
+            
+            <div class="card-body row ">
+              
               
               <ListPokemons 
               v-for="pokemon in pokemonsFiltered"
               :key="pokemon.name"
               :name = "pokemon.name"
-              :urlBaseSvg= "urlBaseSvg + pokemon.url.split('/')[6] + '.svg'"
+              :urlBaseSvg= "urlBaseSvg + pokemon.url.split('/')[6] + '.png'"
               @click="selectPokemon(pokemon)"
               />
             </div>
@@ -112,7 +119,7 @@ const selectPokemon = async (pokemon)=>{
 
 
 .pesquisa{
-  height: 50px;
+  height: 40px;
 }
 
 </style>
